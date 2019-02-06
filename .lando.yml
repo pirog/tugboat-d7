@@ -1,0 +1,4 @@
+name: tugboat-d7
+recipe: drupal7
+config:
+  webroot: .
