@@ -2,3 +2,11 @@ name: tugboat-d7
 recipe: drupal7
 config:
   webroot: .
+services:
+  appserver:
+    build:
+      - curl https://dashboard2.tugboat.qa/cli/linux/tugboat.tar.gz -L -o /tmp/tugboat.tar.gz
+      - cd /tmp && tar -xzf tugboat.tar.gz && chmod +x tugboat && mv tugboat /usr/local/bin/tugboat
+tooling:
+  tugboat:
+    service: appserver
